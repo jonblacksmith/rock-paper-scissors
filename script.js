@@ -36,10 +36,9 @@ function playRound() {
 function game() {
   let cpuScore = 0;
   let userScore = 0;
-  let roundCount = 0;
   let roundResult = 0;
 
-  while (roundCount <= 4) {
+  do {
     roundResult = playRound();
     if (roundResult == 'win') {
       userScore++;
@@ -47,9 +46,9 @@ function game() {
     else if (roundResult == 'lose') {
       cpuScore++;
     }
-    roundCount++;
   }
-
+  while (userScore < 3 && cpuScore < 3);
+  
   if (userScore > cpuScore) {
     console.log("You win!");
   }
@@ -65,3 +64,5 @@ function game() {
 }
 
 game();
+
+
